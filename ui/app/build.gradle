@@ -1,0 +1,18 @@
+apply plugin: 'com.android.application'
+
+apply from: "$rootDir/base_android_module_config.gradle"
+apply from: "$rootDir/ui/base_ui_dependencies.gradle"
+
+android {
+    defaultConfig {
+        // applicationId can only be set in one module
+        applicationId app.packagename
+        //make apk name
+        setProperty("archivesBaseName", app.appname + "_v-" + buildVersionName())
+    }
+}
+
+dependencies{
+    implementation project(":ui:base")
+    implementation project(path: ":ui:authorization")
+}

@@ -1,0 +1,51 @@
+apply from: "$rootDir/versions.gradle"
+
+ext {
+    android {
+        buildscript {
+            configurations.all {
+                resolutionStrategy {
+                    force 'net.sf.proguard:proguard-gradle:5.3.3'
+                }
+            }
+        }
+        compileSdkVersion androidVersions.compile_sdk_version
+        buildToolsVersion androidVersions.build_tool_version
+
+        defaultConfig {
+            multiDexEnabled true
+            minSdkVersion androidVersions.min_sdk_version
+            targetSdkVersion androidVersions.target_sdk_version
+            versionCode buildVersionCode()
+            versionName buildVersionName()
+        }
+
+
+        def BASE_URL = "BASE_URL"
+        def STRING = "String"
+
+        buildTypes {
+            release {
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), "$rootDir/project_proguard-rules.pro"
+                minifyEnabled false
+                debuggable false
+                versionNameSuffix "-R"
+                buildConfigField STRING, BASE_URL, "\"http://andreyyurin.ru/\""
+//                shrinkResources true
+            }
+            debug {
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), "$rootDir/project_proguard-rules.pro"
+                minifyEnabled false
+                debuggable true
+                versionNameSuffix "-T"
+                buildConfigField STRING, BASE_URL, "\"http://andreyyurin.ru/\""
+//                shrinkResources true
+            }
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+}

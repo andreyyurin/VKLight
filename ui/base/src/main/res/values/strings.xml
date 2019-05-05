@@ -1,0 +1,6 @@
+<resources>
+    <!-- NAVIGATOR -->
+    <string name="navigator_name_my_tasks">My tasks</string>
+    <string name="navigator_name_people_tasks">People tasks</string>
+    <string name="navigator_name_more">More</string>
+</resources>

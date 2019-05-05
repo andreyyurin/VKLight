@@ -1,0 +1,5 @@
+include 'data', ':domain',
+        'ui:app',
+        'ui:base',
+        'ui:sharedui',
+        'ui:authorization'

@@ -1,0 +1,27 @@
+/* EACH ui module IN EXCEPTION OF BASE and APP modules
+   should apply in it's build.gradle this script.
+
+    It applies:
+
+    1. Base android module config (minsdk, proguard, targetsdk...)
+    2. Kotlin plugins and a lib
+    3. Android library plugin
+    4. Module dependencies on modules: domain, base
+    5. All ui-common third-party libs
+*/
+
+apply plugin: 'com.android.library'
+
+
+apply from: "$rootDir//base_android_module_config.gradle"
+apply from: "$rootDir/ui/base_ui_dependencies.gradle"
+
+dependencies{
+    implementation project(":ui:base")
+}
+
+kapt {
+    arguments {
+        arg("moxyReflectorPackage", project.base_package_name + project.path.substring(4))
+    }
+}
