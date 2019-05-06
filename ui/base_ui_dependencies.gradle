@@ -61,4 +61,7 @@ dependencies {
     // VK SDK
     implementation project(":vk-sdk-core")
 
+    // Wheel progress bar
+    implementation "com.pnikosis:materialish-progress:$versions.wheel_progress"
+
 }

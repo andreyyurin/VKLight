@@ -43,7 +43,7 @@ class MainActivity : BaseActivity(), MainView {
         initNavigator()
         initBottomNavView(savedInstanceState)
         initBackStackChangeListener()
-        openAuthorizationScreen()
+        checkLogin()
         initTokenHandler()
     }
 
@@ -64,8 +64,13 @@ class MainActivity : BaseActivity(), MainView {
         }
     }
 
-    private fun openAuthorizationScreen(){
-        presenter.openAuthScreen()
+    private fun checkLogin(){
+        if(VK.isLoggedIn()){
+            presenter.onFeedClick()
+        }else{
+            presenter.openAuthScreen()
+        }
+
     }
 
     private fun initTokenHandler(){

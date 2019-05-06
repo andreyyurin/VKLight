@@ -3,37 +3,37 @@ package ltc.ru.domain.models
 
 import com.google.gson.annotations.SerializedName
 
-data class VKProfile(val response: Response)
+data class VKProfile(val response: ResponseProfile)
 
-data class Response(
+data class ResponseProfile(
     @SerializedName("first_name") val firstName: String,
     @SerializedName("last_name") val lastName: String = "",
     @SerializedName("screen_name") val screenName: String = "",
     val sex: Int = 0,
     val relation: Int = 0,
-    @SerializedName("relation_partner") val relationPartner: User,
+    @SerializedName("relation_partner") val relationPartner: UserProfile,
     @SerializedName("relation_pending") val relationPending: Int,
     val bdate: String,
     @SerializedName("bdate_visibility") val bdateVisibility: Int = 0,
     @SerializedName("home_town") val homeTown: String,
-    val country: CountryObject,
-    val city: CityObject,
-    @SerializedName("name_request") val nameRequest: List<User>,
+    val country: CountryObjectProfile,
+    val city: CityObjectProfile,
+    @SerializedName("name_request") val nameRequest: List<UserProfile>,
     val status: String,
     val phone: String
 )
 
-data class CountryObject(
+data class CountryObjectProfile(
     val id: Int,
     val title: String
 )
 
-data class CityObject(
+data class CityObjectProfile(
     val id: Int,
     val title: String
 )
 
-data class User(
+data class UserProfile(
     val id: Int,
     @SerializedName("first_name") val firstName: String,
     @SerializedName("last_name") val lastName: String,

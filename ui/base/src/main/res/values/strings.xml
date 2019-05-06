@@ -2,7 +2,7 @@
     <integer name="com_vk_sdk_AppId">6973648</integer>
 
     <!-- NAVIGATOR -->
-    <string name="navigator_name_my_tasks">My tasks</string>
-    <string name="navigator_name_people_tasks">People tasks</string>
+    <string name="navigator_name_feed">Feed</string>
+    <string name="navigator_name_messages">Messages</string>
     <string name="navigator_name_more">More</string>
 </resources>

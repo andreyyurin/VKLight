@@ -33,7 +33,8 @@ ext.versions = [
         glide                     : '4.8.0',
         layer                     : '4.0.7',
         gcm_services              : '16.1.0',
-        vk_sdk                    : '2.0.0'
+        vk_sdk                    : '2.0.0',
+        wheel_progress            : '1.7'
 ]
 
 ext.buildVersionCode = {

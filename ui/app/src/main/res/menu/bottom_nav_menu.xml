@@ -3,21 +3,21 @@
     <item
             android:id="@+id/bottom_nav_action_people_tasks"
             android:enabled="true"
-            android:icon="@drawable/ic_people_tasks"
-            android:title="@string/navigator_name_people_tasks"
+            android:icon="@drawable/outline_note_white_48"
+            android:title="@string/navigator_name_feed"
             app:showAsAction="ifRoom"/>
 
     <item
             android:id="@+id/bottom_nav_action_my_tasks"
             android:enabled="true"
-            android:icon="@drawable/ic_my_tasks"
-            android:title="@string/navigator_name_my_tasks"
+            android:icon="@drawable/outline_email_white_48"
+            android:title="@string/navigator_name_messages"
             app:showAsAction="ifRoom"/>
 
     <item
             android:id="@+id/bottom_nav_action_more"
             android:enabled="true"
-            android:icon="@drawable/ic_more"
+            android:icon="@drawable/outline_more_horiz_white_48"
             android:title="@string/navigator_name_more"
             app:showAsAction="ifRoom"/>
 </menu>

@@ -3,14 +3,17 @@ package ltc.ru.data.repository.feed
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.VKApiCallback
 import com.vk.api.sdk.exceptions.VKApiExecutionException
-import ltc.ru.data.request.VKProfileRequest
-import ltc.ru.domain.models.VKProfile
+import ltc.ru.data.request.VKFeedPhotosRequest
+import ltc.ru.domain.models.VKPhotoFeed
 
-class FeedService{
-    fun getUserInfo(func: (String) -> Unit){
-        VK.execute(VKProfileRequest(), object : VKApiCallback<VKProfile> {
-            override fun success(result: VKProfile){
-                func.invoke(result.response.firstName)
+class FeedService {
+    fun getFeedPhotos(func: (VKPhotoFeed) -> Unit) {
+        val request = VKFeedPhotosRequest()
+            .addParam("filters", "photo,photo_tag")
+            .addParam("count", 75)
+        VK.execute(request, object : VKApiCallback<VKPhotoFeed> {
+            override fun success(result: VKPhotoFeed) {
+                func.invoke(result)
             }
 
             override fun fail(error: VKApiExecutionException) {

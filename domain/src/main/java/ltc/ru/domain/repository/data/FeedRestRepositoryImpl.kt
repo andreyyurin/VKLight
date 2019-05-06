@@ -1,5 +1,7 @@
 package ltc.ru.domain.repository.data
 
+import ltc.ru.domain.models.VKPhotoFeed
+
 interface FeedRestRepositoryImpl{
-    suspend fun getUser(func: (String) -> Unit)
+    suspend fun getFeedPhotos(func: (VKPhotoFeed) -> Unit)
 }

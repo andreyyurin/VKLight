@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="plurals_years">
+        <item quantity="one">год назад</item>
+        <item quantity="two">года назад</item>
+        <item quantity="few">года назад</item>
+        <item quantity="many">лет назад</item>
+        <item quantity="other">лет назад</item>
+    </plurals>
+
+    <plurals name="plurals_months">
+        <item quantity="one">месяц назад</item>
+        <item quantity="two">месяца назад</item>
+        <item quantity="few">месяца назад</item>
+        <item quantity="many">месяцев назад</item>
+        <item quantity="other">месяцев назад</item>
+    </plurals>
+
+    <plurals name="plurals_days">
+        <item quantity="one">день назад</item>
+        <item quantity="two">дня назад</item>
+        <item quantity="few">дня назад</item>
+        <item quantity="many">дней назад</item>
+        <item quantity="other">дней назад</item>
+    </plurals>
+
+    <plurals name="plurals_hours">
+        <item quantity="one">час назад</item>
+        <item quantity="two">часа назад</item>
+        <item quantity="few">часа назад</item>
+        <item quantity="many">часов назад</item>
+        <item quantity="other">часов назад</item>
+    </plurals>
+
+    <plurals name="plurals_minutes">
+        <item quantity="one">минуту назад</item>
+        <item quantity="two">минуты назад</item>
+        <item quantity="few">минуты назад</item>
+        <item quantity="many">минут назад</item>
+        <item quantity="other">минут назад</item>
+    </plurals>
+
+    <plurals name="plurals_second">
+        <item quantity="one">секунду назад</item>
+        <item quantity="two">секунды назад</item>
+        <item quantity="few">секунды назад</item>
+        <item quantity="many">секунд назад</item>
+        <item quantity="other">секунд назад</item>
+    </plurals>
+</resources>

@@ -19,12 +19,17 @@ internal class FeedPresenter : BasePresenter<FeedView>(){
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        //sendData()
     }
 
-    fun sendData(){
+    fun getFeedPhotos(){
         GlobalScope.launch{
-            interactor.getProfile(viewState::setData)
+            interactor.getPhotosFeed(viewState::setDataPhotos)
+        }
+    }
+
+    fun updateFeedPhotos(){
+        GlobalScope.launch{
+            interactor.getPhotosFeed(viewState::updateDataPhotos)
         }
     }
 }
