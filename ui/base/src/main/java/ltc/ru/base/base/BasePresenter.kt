@@ -21,6 +21,6 @@ abstract class BasePresenter<View : BaseView> (protected val uiContext: Coroutin
     }
 }
 
-fun CoroutineScope.launch(func: suspend () -> Unit){
-    launch { func.invoke() }
-}
+//fun CoroutineScope.launch(func: suspend () -> Unit){
+//    launch { func.invoke() }
+//}

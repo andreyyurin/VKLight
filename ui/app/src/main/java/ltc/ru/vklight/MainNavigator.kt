@@ -8,6 +8,7 @@ import android.view.View
 import ltc.ru.authorization.AuthorizationFragment
 import ltc.ru.base.base.BaseFragment
 import ltc.ru.base.navigation.GlobalScreenKeys
+import ltc.ru.feed.FeedFragment
 import ru.terrakok.cicerone.android.SupportAppNavigator
 import ru.terrakok.cicerone.commands.Command
 import ru.terrakok.cicerone.commands.Replace
@@ -31,7 +32,7 @@ internal class MainNavigator(activity: MainActivity,
         return when (screenKey) {
 //            GlobalScreenKeys.MY_TASKS_SCREEN -> MyTasksFragment()
 //            GlobalScreenKeys.PEOPLE_TASKS_SCREEN -> PeopleTasksFragment()
-//            GlobalScreenKeys.MORE_SCREEN -> MoreFragment()
+            GlobalScreenKeys.FEED_SCREEN -> FeedFragment()
             GlobalScreenKeys.AUTHORIZATION_SCREEN -> AuthorizationFragment()
             else -> throw IllegalStateException("Main navigator - unknown screen key: $screenKey")
         }

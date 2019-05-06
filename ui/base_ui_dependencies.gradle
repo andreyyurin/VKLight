@@ -59,6 +59,6 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$versions.glide"
 
     // VK SDK
-    implementation "com.vk:androidsdk:$versions.vk_sdk"
+    implementation project(":vk-sdk-core")
 
 }

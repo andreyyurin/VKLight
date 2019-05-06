@@ -18,6 +18,8 @@ import ltc.ru.base.base.BaseActivity
 import ltc.ru.base.base.BaseFragment
 import ltc.ru.base.di.ProjectComponent
 import ltc.ru.base.navigation.GlobalScreenKeys
+import ltc.ru.feed.FeedFragment
+import ltc.ru.taskhelper.R
 import ru.terrakok.cicerone.Navigator
 
 class MainActivity : BaseActivity(), MainView {
@@ -54,7 +56,7 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun VKAuthCallback() = object: VKAuthCallback{
         override fun onLogin(token: VKAccessToken) {
-            //presenter.openMyTasksScreen()
+            presenter.onFeedClick()
             testInfo()
         }
 
@@ -85,7 +87,7 @@ class MainActivity : BaseActivity(), MainView {
             mapOf(
 //                Pair(GlobalScreenKeys.MY_TASKS_SCREEN, myTasksFragment),
 //                Pair(GlobalScreenKeys.PEOPLE_TASKS_SCREEN, peopleTasksFragment),
-//                Pair(GlobalScreenKeys.MORE_SCREEN, moreFragment),
+                Pair(GlobalScreenKeys.FEED_SCREEN, feedFragment),
                 Pair(GlobalScreenKeys.AUTHORIZATION_SCREEN, authFragment)
             ),
             main_bottom_navigation
@@ -95,7 +97,7 @@ class MainActivity : BaseActivity(), MainView {
     private fun initBottomNavView(savedInstanceState: Bundle?) {
         main_bottom_navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-//                R.id.bottom_nav_action_my_tasks -> presenter.onMyTasksClick()
+                R.id.bottom_nav_action_my_tasks -> presenter.onFeedClick()
 //                R.id.bottom_nav_action_people_tasks -> presenter.onPeopleTasksClick()
 //                R.id.bottom_nav_action_more -> presenter.onMoreClick()
             }
@@ -137,10 +139,10 @@ class MainActivity : BaseActivity(), MainView {
 //        initFragment(GlobalScreenKeys.PEOPLE_TASKS_SCREEN) { PeopleTasksFragment() }
 //    }
 //
-//    private val moreFragment: BaseFragment by lazy {
-//        initFragment(GlobalScreenKeys.MORE_SCREEN) { MoreFragment() }
-//    }
-//
+    private val feedFragment: BaseFragment by lazy {
+        initFragment(GlobalScreenKeys.FEED_SCREEN) { FeedFragment() }
+    }
+
     private val authFragment: BaseFragment by lazy {
         initFragment(GlobalScreenKeys.AUTHORIZATION_SCREEN) { AuthorizationFragment() }
     }

@@ -4,7 +4,7 @@ apply from: "$rootDir/base_android_module_config.gradle"
 apply from: "$rootDir/ui/base_ui_dependencies.gradle"
 
 dependencies {
-    //implementation project(path: ':data')
+    implementation project(path: ':data')
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"

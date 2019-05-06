@@ -1,4 +1,6 @@
 <resources>
+    <integer name="com_vk_sdk_AppId">6973648</integer>
+
     <!-- NAVIGATOR -->
     <string name="navigator_name_my_tasks">My tasks</string>
     <string name="navigator_name_people_tasks">People tasks</string>

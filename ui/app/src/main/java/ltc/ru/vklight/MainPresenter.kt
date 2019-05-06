@@ -16,9 +16,9 @@ internal class MainPresenter : BasePresenter<MainView>() {
         super.onFirstViewAttach()
     }
 
-//    fun onMyTasksClick(){
-//        router.replaceScreen(GlobalScreenKeys.MY_TASKS_SCREEN)
-//    }
+    fun onFeedClick(){
+        router.replaceScreen(GlobalScreenKeys.FEED_SCREEN)
+    }
 //
 //    fun onPeopleTasksClick(){
 //        router.replaceScreen(GlobalScreenKeys.PEOPLE_TASKS_SCREEN)

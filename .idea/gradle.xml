@@ -14,7 +14,9 @@
             <option value="$PROJECT_DIR$/ui/app" />
             <option value="$PROJECT_DIR$/ui/authorization" />
             <option value="$PROJECT_DIR$/ui/base" />
+            <option value="$PROJECT_DIR$/ui/feed" />
             <option value="$PROJECT_DIR$/ui/sharedui" />
+            <option value="$PROJECT_DIR$/vk-android-sdk-master/vk-sdk-core" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 apply from: "$rootDir/base_android_module_config.gradle"
 
 dependencies{
-
     // Moxy
     implementation "com.arello-mobile:moxy:$versions.moxy"
 
@@ -21,7 +20,7 @@ dependencies{
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$project.kotlin_version"
 
     // VK SDK
-    implementation "com.vk:androidsdk:$versions.vk_sdk"
+    implementation project(":vk-sdk-core")
 
     // Gson
     implementation "com.google.code.gson:gson:$versions.gson"
