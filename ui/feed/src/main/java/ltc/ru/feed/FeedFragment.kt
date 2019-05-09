@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.fragment_feed.*
 import ltc.ru.base.base.BaseFragment
 import ltc.ru.base.di.ProjectComponent
 import ltc.ru.domain.models.VKPhotoFeed
+import ltc.ru.domain.models.VKUser
 import ltc.ru.feed.adapter.FeedPhotosAdapter
 
 class FeedFragment : BaseFragment(), FeedView {
@@ -32,21 +33,24 @@ class FeedFragment : BaseFragment(), FeedView {
         getDataFeedPhotos()
     }
 
-    private fun initProgressBar(){
+    private fun initProgressBar() {
         feed_progress_bar.spin()
     }
 
-    private fun getDataFeedPhotos(){
+    private fun getDataFeedPhotos() {
         presenter.getFeedPhotos()
     }
 
-    private fun getUpdateDataFeedPhotos(){
+    private fun getUpdateDataFeedPhotos() {
         presenter.updateFeedPhotos()
     }
 
+    private fun getUsersInformation(listIds: String){
+        presenter.getUsers(listIds)
+    }
 
-    private fun initSwipeRefreshLayout(){
-        swipe_container.setOnRefreshListener{ getUpdateDataFeedPhotos() }
+    private fun initSwipeRefreshLayout() {
+        swipe_container.setOnRefreshListener { getUpdateDataFeedPhotos() }
     }
 
     private fun initRecyclerView(view: View) {
@@ -59,13 +63,29 @@ class FeedFragment : BaseFragment(), FeedView {
     }
 
     override fun setDataPhotos(res: VKPhotoFeed) {
-        adapter.swapItems(res.response.items)
+        getUsersInformation(algthStringOfAllIds(res))
+        adapter.swapPhotoItems(res.response.items)
         feed_progress_bar.visibility = View.GONE
     }
 
-    override fun updateDataPhotos(res: VKPhotoFeed){
-        adapter.swapItems(res.response.items)
+    override fun updateDataPhotos(res: VKPhotoFeed) {
+        getUsersInformation(algthStringOfAllIds(res))
+        adapter.swapPhotoItems(res.response.items)
         swipe_container.isRefreshing = false
+    }
+
+    override fun loadDataUsers(res: VKUser) {
+        adapter.swapUserItems(res.response)
+    }
+
+    private fun algthStringOfAllIds(res: VKPhotoFeed): String{
+        var finalString = ""
+        for(i in res.response.items){
+
+            finalString+=((i.sourceId.toString()+","))
+        }
+        finalString.substring(0, finalString.length-1)
+        return finalString
     }
 
     override fun isShowBottomMenu() = true

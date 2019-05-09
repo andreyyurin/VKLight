@@ -5,6 +5,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.photo_item.view.*
 
 internal class FeedPhotosViewHolder(view: View): RecyclerView.ViewHolder(view){
-    var rvImage = view.photo
-    var rvDate = view.date
+    val rvImage = view.photo
+    val rvDate = view.date
+    val rvName = view.name
+    val rvAvatar = view.avatar
 }

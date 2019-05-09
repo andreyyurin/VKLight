@@ -64,4 +64,7 @@ dependencies {
     // Wheel progress bar
     implementation "com.pnikosis:materialish-progress:$versions.wheel_progress"
 
+    // Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
 }

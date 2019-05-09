@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="main_color_app">#424242</color>
+    <color name="main_color_app">#212121</color>
 
-    <color name="wheel_progress">@color/main_color_app</color>
-    <color name="bottom_nav_color">@color/main_color_app</color>
+    <color name="wheel_progress">#FFFFFF</color>
+    <color name="bottom_nav_color">#424242</color>
     <color name="bottom_item_color">#FFFFFF</color>
+
+    <color name="color_feed_photo_item_name">#FFFFFF</color>
+    <color name="color_feed_photo_item_date">#BDBDBD</color>
+    <color name="color_feed_photo_item_background">#272727</color>
+
 </resources>

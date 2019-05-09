@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+        android:background="@color/main_color_app"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:wheel="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -16,7 +17,6 @@
             android:id="@+id/swipe_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/feed_photos_recycler"
                 android:layout_width="match_parent"
