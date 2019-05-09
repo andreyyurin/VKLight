@@ -9,8 +9,8 @@ This app Easy and Light Client for VK, special for people, who need to check onl
 This app features the use of the following libs:
 
 - Dagger 2
-- Retrofit
 - Coroutines
+- Moxy
 - Cicerone
 - VK Sdk
 
