@@ -16,4 +16,5 @@ dependencies{
     implementation project(":ui:base")
     implementation project(path: ":ui:authorization")
     implementation project(path: ":ui:feed")
+    implementation project(path: ":ui:imageview")
 }

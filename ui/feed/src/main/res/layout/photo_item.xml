@@ -5,7 +5,8 @@
         android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:fresco="http://schemas.android.com/tools">
     <LinearLayout
             android:layout_marginStart="15dp"
             android:layout_width="match_parent"
@@ -41,6 +42,7 @@
         </LinearLayout>
     </LinearLayout>
     <ImageView
+            android:adjustViewBounds="true"
             android:layout_marginTop="7dp"
             android:scaleType="fitCenter"
             android:id="@+id/photo"

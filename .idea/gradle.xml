@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/ui" />
@@ -15,8 +16,9 @@
             <option value="$PROJECT_DIR$/ui/authorization" />
             <option value="$PROJECT_DIR$/ui/base" />
             <option value="$PROJECT_DIR$/ui/feed" />
+            <option value="$PROJECT_DIR$/ui/imageview" />
             <option value="$PROJECT_DIR$/ui/sharedui" />
-            <option value="$PROJECT_DIR$/vk-android-sdk-master/vk-sdk-core" />
+            <option value="$PROJECT_DIR$/vk-sdk-core" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

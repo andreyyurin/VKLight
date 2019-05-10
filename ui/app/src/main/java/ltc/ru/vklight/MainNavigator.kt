@@ -9,6 +9,7 @@ import ltc.ru.authorization.AuthorizationFragment
 import ltc.ru.base.base.BaseFragment
 import ltc.ru.base.navigation.GlobalScreenKeys
 import ltc.ru.feed.FeedFragment
+import ltc.ru.imageview.ImageViewerFragment
 import ru.terrakok.cicerone.android.SupportAppNavigator
 import ru.terrakok.cicerone.commands.Command
 import ru.terrakok.cicerone.commands.Replace
@@ -34,6 +35,7 @@ internal class MainNavigator(activity: MainActivity,
 //            GlobalScreenKeys.PEOPLE_TASKS_SCREEN -> PeopleTasksFragment()
             GlobalScreenKeys.FEED_SCREEN -> FeedFragment()
             GlobalScreenKeys.AUTHORIZATION_SCREEN -> AuthorizationFragment()
+            GlobalScreenKeys.FULL_IMAGE_SCREEN -> ImageViewerFragment.newInstance(data.toString())
             else -> throw IllegalStateException("Main navigator - unknown screen key: $screenKey")
         }
     }

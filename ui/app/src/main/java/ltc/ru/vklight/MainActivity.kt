@@ -2,16 +2,13 @@ package ltc.ru.vklight
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.vk.api.sdk.VK
-import com.vk.api.sdk.VKApiCallback
 import com.vk.api.sdk.VKTokenExpiredHandler
 import com.vk.api.sdk.auth.VKAccessToken
 import com.vk.api.sdk.auth.VKAuthCallback
-import com.vk.api.sdk.auth.VKScope
-import com.vk.api.sdk.exceptions.VKApiExecutionException
 import kotlinx.android.synthetic.main.activity_main.*
 import ltc.ru.authorization.AuthorizationFragment
 import ltc.ru.base.base.BaseActivity
@@ -54,7 +51,7 @@ class MainActivity : BaseActivity(), MainView {
         }
     }
 
-    private fun VKAuthCallback() = object: VKAuthCallback{
+    private fun VKAuthCallback() = object : VKAuthCallback {
         override fun onLogin(token: VKAccessToken) {
             presenter.onFeedClick()
             testInfo()
@@ -64,34 +61,33 @@ class MainActivity : BaseActivity(), MainView {
         }
     }
 
-    private fun checkLogin(){
-        if(VK.isLoggedIn()){
+    private fun checkLogin() {
+        if (VK.isLoggedIn()) {
             presenter.onFeedClick()
-        }else{
+        } else {
             presenter.openAuthScreen()
         }
 
     }
 
-    private fun initTokenHandler(){
+    private fun initTokenHandler() {
         VK.addTokenExpiredHandler(tokenTracker)
     }
 
-    private val tokenTracker = object: VKTokenExpiredHandler {
+    private val tokenTracker = object : VKTokenExpiredHandler {
         override fun onTokenExpired() {
             // token expired
         }
     }
 
-    private fun testInfo(){
+    private fun testInfo() {
 
     }
+
     private fun initNavigator() {
         navigator = MainNavigator(
             this, R.id.main_fragment_container,
             mapOf(
-//                Pair(GlobalScreenKeys.MY_TASKS_SCREEN, myTasksFragment),
-//                Pair(GlobalScreenKeys.PEOPLE_TASKS_SCREEN, peopleTasksFragment),
                 Pair(GlobalScreenKeys.FEED_SCREEN, feedFragment),
                 Pair(GlobalScreenKeys.AUTHORIZATION_SCREEN, authFragment)
             ),
@@ -103,8 +99,6 @@ class MainActivity : BaseActivity(), MainView {
         main_bottom_navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.bottom_nav_action_my_tasks -> presenter.onFeedClick()
-//                R.id.bottom_nav_action_people_tasks -> presenter.onPeopleTasksClick()
-//                R.id.bottom_nav_action_more -> presenter.onMoreClick()
             }
             true
         }
@@ -135,15 +129,6 @@ class MainActivity : BaseActivity(), MainView {
         return fragment as BaseFragment
     }
 
-
-//    private val myTasksFragment: BaseFragment by lazy {
-//        initFragment(GlobalScreenKeys.MY_TASKS_SCREEN) { MyTasksFragment() }
-//    }
-//
-//    private val peopleTasksFragment: BaseFragment by lazy {
-//        initFragment(GlobalScreenKeys.PEOPLE_TASKS_SCREEN) { PeopleTasksFragment() }
-//    }
-//
     private val feedFragment: BaseFragment by lazy {
         initFragment(GlobalScreenKeys.FEED_SCREEN) { FeedFragment() }
     }
@@ -153,7 +138,7 @@ class MainActivity : BaseActivity(), MainView {
     }
 
     override fun showBottomMenu(show: Boolean) {
-        if (!show) main_bottom_navigation.visibility = View.INVISIBLE
+        if (!show) main_bottom_navigation.visibility = View.GONE
         else main_bottom_navigation.visibility = View.VISIBLE
     }
 }

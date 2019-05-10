@@ -67,4 +67,7 @@ dependencies {
     // Circle ImageView
     implementation 'de.hdodenhof:circleimageview:3.0.0'
 
+    // PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
 }

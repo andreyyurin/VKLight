@@ -1,7 +1,9 @@
-include 'data', ':domain',  ':vk-sdk-core',
+include ':data', ':domain',
+        ':vk-sdk-core',
         'ui:app',
         'ui:base',
         'ui:sharedui',
         'ui:authorization',
-        'ui:feed'
-project(':vk-sdk-core').projectDir = new File('vk-android-sdk-master/vk-sdk-core')
+        'ui:feed',
+        'ui:imageview', ':app'
+project(':vk-sdk-core').projectDir = new File('vk-sdk-core')

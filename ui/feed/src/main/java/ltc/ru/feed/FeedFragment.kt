@@ -59,7 +59,7 @@ class FeedFragment : BaseFragment(), FeedView {
     }
 
     private val adapter: FeedPhotosAdapter by lazy {
-        FeedPhotosAdapter(this.requireContext())
+        FeedPhotosAdapter(this.requireContext(), presenter::openFullImageScreen)
     }
 
     override fun setDataPhotos(res: VKPhotoFeed) {
@@ -81,10 +81,9 @@ class FeedFragment : BaseFragment(), FeedView {
     private fun algthStringOfAllIds(res: VKPhotoFeed): String{
         var finalString = ""
         for(i in res.response.items){
-
             finalString+=((i.sourceId.toString()+","))
         }
-        finalString.substring(0, finalString.length-1)
+        finalString = finalString.substring(0, finalString.length-1)
         return finalString
     }
 

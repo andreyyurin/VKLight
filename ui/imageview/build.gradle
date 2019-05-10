@@ -1,0 +1,1 @@
+apply from: '../base_ui_submodule_config.gradle'

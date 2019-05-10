@@ -15,7 +15,6 @@ class UserService {
             .addParam("name_case", "Nom")
         VK.execute(request, object : VKApiCallback<VKUser> {
             override fun success(result: VKUser) {
-                Log.d("xyi-err", id)
                 func.invoke(result)
             }
 

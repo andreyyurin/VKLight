@@ -16,6 +16,7 @@ import com.arellomobile.mvp.RegisterMoxyReflectorPackages
 // And add the specified package name inside this annotation's arguments list.
 @RegisterMoxyReflectorPackages(
     "ltc.ru.vklight.authorization",
-    "ltc.ru.vklight.feed"
+    "ltc.ru.vklight.feed",
+    "ltc.ru.vklight.imageview"
     )
 class MoxyMultimodularProjectFix
