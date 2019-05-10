@@ -13,6 +13,7 @@ This app features the use of the following libs:
 - Moxy
 - Cicerone
 - VK Sdk
+- Fresco
 
 ## Architecture
 - Clean Architecture + MVP
