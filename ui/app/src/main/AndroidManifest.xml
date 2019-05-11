@@ -12,7 +12,7 @@
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Base.Theme.AppCompat.Light">
+            android:theme="@style/AppTheme.NoActionBar">
         <activity android:name="ltc.ru.vklight.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

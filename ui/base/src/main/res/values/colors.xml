@@ -9,5 +9,6 @@
     <color name="color_feed_photo_item_name">#FFFFFF</color>
     <color name="color_feed_photo_item_date">#BDBDBD</color>
     <color name="color_feed_photo_item_background">#272727</color>
+    <color name="color_feed_spinner_background">@color/bottom_nav_color</color>
 
 </resources>

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.facebook.drawee.backends.pipeline.Fresco
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.VKTokenExpiredHandler
 import com.vk.api.sdk.auth.VKAccessToken

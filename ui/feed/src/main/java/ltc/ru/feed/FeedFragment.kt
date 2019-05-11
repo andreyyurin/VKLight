@@ -3,6 +3,7 @@ package ltc.ru.feed
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.AdapterView
 import com.arellomobile.mvp.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.fragment_feed.*
 import ltc.ru.base.base.BaseFragment
@@ -10,6 +11,7 @@ import ltc.ru.base.di.ProjectComponent
 import ltc.ru.domain.models.VKPhotoFeed
 import ltc.ru.domain.models.VKUser
 import ltc.ru.feed.adapter.FeedPhotosAdapter
+import ltc.ru.feed.adapter.FeedSpinnerAdapter
 
 class FeedFragment : BaseFragment(), FeedView {
     @InjectPresenter
@@ -27,10 +29,25 @@ class FeedFragment : BaseFragment(), FeedView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initSpinner(view)
         initProgressBar()
         initRecyclerView(view)
         initSwipeRefreshLayout()
         getDataFeedPhotos()
+    }
+
+    private fun initSpinner(view: View){
+        val listSpinner = arrayOf("Histories", "Photos", "News")
+        feed_spinner.adapter = FeedSpinnerAdapter(view.context, listSpinner)
+
+        feed_spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
     }
 
     private fun initProgressBar() {

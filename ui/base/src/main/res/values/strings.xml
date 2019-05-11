@@ -1,6 +1,10 @@
 <resources>
     <integer name="com_vk_sdk_AppId">6973648</integer>
 
+    <string name="app_name">VKLight</string>
+
+    <string name="toolbar_layout_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
     <!-- NAVIGATOR -->
     <string name="navigator_name_feed">Feed</string>
     <string name="navigator_name_messages">Messages</string>

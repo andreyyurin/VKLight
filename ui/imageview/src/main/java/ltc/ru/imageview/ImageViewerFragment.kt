@@ -1,19 +1,11 @@
 package ltc.ru.imageview
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
-import com.facebook.drawee.backends.pipeline.Fresco
-import com.facebook.drawee.drawable.ProgressBarDrawable
-import com.facebook.drawee.drawable.ScalingUtils
-import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder
-import com.facebook.imagepipeline.request.ImageRequest
 import com.github.chrisbanes.photoview.PhotoViewAttacher
 import kotlinx.android.synthetic.main.image_view_layout.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import ltc.ru.base.base.BaseFragment
 import ltc.ru.base.di.ProjectComponent
 
