@@ -104,6 +104,7 @@ class FeedFragment : BaseFragment(), FeedView {
         return finalString
     }
 
+
     override fun isShowBottomMenu() = true
 
 }

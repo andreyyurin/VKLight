@@ -70,4 +70,15 @@ dependencies {
     // PhotoView
     implementation 'com.github.chrisbanes:PhotoView:2.0.0'
 
+    // Staggered Grid
+    implementation 'com.etsy.android.grid:library:1.0.5'
+
+    // Material Lean Back
+    implementation 'com.github.florent37:materialleanback:1.0.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

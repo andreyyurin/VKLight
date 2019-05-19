@@ -11,6 +11,7 @@ class FeedService {
         val request = VKFeedPhotosRequest()
             .addParam("filters", "photo,photo_tag")
             .addParam("count", 75)
+            .addParam("max_photos", 75)
         VK.execute(request, object : VKApiCallback<VKPhotoFeed> {
             override fun success(result: VKPhotoFeed) {
                 func.invoke(result)
